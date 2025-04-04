@@ -3,12 +3,14 @@ package com.example.splitwise.model;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.Collection;
 import java.util.ArrayList;
 
 @Entity
 @Table(name = "users")  // Since "user" is a reserved keyword, we name the table "users"
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "password"})
 public class User implements UserDetails {
 
     @Id

@@ -17,8 +17,9 @@ public class ExpenseController {
     @Autowired
     private ExpenseService expenseService;
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<Expense> createExpense(@RequestBody Map<String, Object> expenseRequest) {
+        System.out.println("Received expense request: " + expenseRequest);
         return ResponseEntity.ok(expenseService.createExpense(expenseRequest));
     }
 

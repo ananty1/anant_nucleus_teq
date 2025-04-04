@@ -29,6 +29,7 @@ public class ExpenseService {
 
     @Transactional
     public Expense createExpense(Map<String, Object> expenseRequest) {
+        System.out.println("Received expense request: " + expenseRequest);
         User paidBy = userRepository.findByEmail((String) expenseRequest.get("paidByEmail"))
             .orElseThrow(() -> new ResourceNotFoundException("User not found"));
         

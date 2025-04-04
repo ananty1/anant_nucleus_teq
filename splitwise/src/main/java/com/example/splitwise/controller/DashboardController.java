@@ -23,6 +23,7 @@ public class DashboardController {
     @GetMapping
     public ResponseEntity<Map<String, Object>> getDashboardData(Authentication authentication) {
         String userEmail = authentication.getName();
+        System.out.println("User email: " + userEmail);
         Map<String, Object> dashboardData = new HashMap<>();
 
         // Get user's balances

@@ -3,9 +3,11 @@ package com.example.splitwise.model;
 import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "groups")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Group {
 
     @Id

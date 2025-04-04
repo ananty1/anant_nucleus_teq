@@ -92,12 +92,5 @@ public class UserController {
         return ResponseEntity.badRequest().build();
     }
 
-    @PutMapping("/users/profile")
-    public ResponseEntity<User> updateProfile(
-            @RequestBody Map<String, String> profileData,
-            Authentication authentication) {
-        String userEmail = authentication.getName();
-        User updatedUser = userService.updateProfile(userEmail, profileData);
-        return ResponseEntity.ok(updatedUser);
-    }
+   
 }
